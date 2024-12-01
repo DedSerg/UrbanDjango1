@@ -18,10 +18,17 @@ from django.contrib import admin
 from django.urls import path
 
 from task2.views import function_view, ClassView
+from task3.views import platform_view, cart_view, games_view
 
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('functions/', function_view),
+#     path('classes/', ClassView.as_view()),
+# ]
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('functions/', function_view),
-    path('classes/', ClassView.as_view()),
+    path('', platform_view, name='platform'),
+    path('platform/cart/', cart_view, name='games'),
+    path('platform/games/', games_view, name='cart'),
 ]
